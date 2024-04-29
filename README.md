@@ -1,8 +1,19 @@
 # op6
-// TODO(user): Add simple overview of use/purpose
+[Resource](https://dev.to/mxglt/how-to-create-a-kubernetes-operator--2g6h)
+[app/v1 package](https://pkg.go.dev/k8s.io/api/apps/v1)
 
 ## Description
-// TODO(user): An in-depth paragraph about your project and overview of use
+```
+err = r.Get(context.TODO(), types.NamespacedName{Name: myProxy.Spec.Name, Namespace: req.Namespace}, existingDeployments)
+```
+is very different from
+```
+err = r.Get(context.TODO(), req.Namespace, existingDeployments)
+```
+where the second way will keep causing
+```
+ERROR   Reconciler error        {"controller": "op6apikind", "controllerGroup": "op6apigroup.op6domain", "controllerKind": "Op6ApiKind", "Op6ApiKind": {"name":"op6apikind-sample","namespace":"default"}, "namespace": "default", "name": "op6apikind-sample", "reconcileID": "b211ce53-b408-48e5-bb2e-f0df6f9ba1c6", "error": "deployments.apps \"app-name\" already exists"}
+```
 
 ## Getting Started
 
