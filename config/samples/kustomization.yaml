@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- op6apigroup_v1_op6apikind.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

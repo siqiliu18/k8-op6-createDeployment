@@ -1,0 +1,47 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.13.0
+  name: op6apikinds.op6apigroup.op6domain
+spec:
+  group: op6apigroup.op6domain
+  names:
+    kind: Op6ApiKind
+    listKind: Op6ApiKindList
+    plural: op6apikinds
+    singular: op6apikind
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: Op6ApiKind is the Schema for the op6apikinds API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: Op6ApiKindSpec defines the desired state of Op6ApiKind
+            properties:
+              name:
+                type: string
+            type: object
+          status:
+            description: Op6ApiKindStatus defines the observed state of Op6ApiKind
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

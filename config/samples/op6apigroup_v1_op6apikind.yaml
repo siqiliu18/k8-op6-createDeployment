@@ -1,0 +1,12 @@
+apiVersion: op6apigroup.op6domain/v1
+kind: Op6ApiKind
+metadata:
+  labels:
+    app.kubernetes.io/name: op6apikind
+    app.kubernetes.io/instance: op6apikind-sample
+    app.kubernetes.io/part-of: op6
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: op6
+  name: op6apikind-sample
+spec:
+  name: app-name
